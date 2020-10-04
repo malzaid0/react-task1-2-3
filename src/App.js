@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+// Components
+import ItemList from "./components/ItemList";
+
+// Data
+import items from "./items";
+
+// Styling
+import styles from "./styles";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={styles.restaurantBody}>
+        <h1 style={styles.restaurantName}>My Restaurant</h1>
+        <img src="https://www.todott.com/wp-content/uploads/2016/10/clos-maggiore-2.jpg" className="App-logo" style={styles.restaurantImage} alt="logo" />
+
+        <ItemList />
     </div>
   );
 }
