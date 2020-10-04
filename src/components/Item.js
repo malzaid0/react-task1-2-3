@@ -1,16 +1,15 @@
 import React from "react";
 
-// Styles
-import styles from "../styles";
+import {ItemWrapper} from "./styles";
 
 const Item = (props) => {
     const {item} = props
     return (
-        <div style={styles.item} key={item.id}>
-            <img style={styles.itemImage} alt={item.name} src={item.image} />
-            <p style={styles.text}>{item.name}</p>
-            <p style={styles.text}>{item.price} SR</p>
-        </div>
+        <ItemWrapper key={item.id}>
+            <img alt={item.name} src={item.image} />
+            <p>{item.name}</p>
+            <p>{item.price} SR</p>
+        </ItemWrapper>
     )
 }
 export default Item

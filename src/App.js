@@ -3,21 +3,31 @@ import React from 'react';
 // Components
 import ItemList from "./components/ItemList";
 
-// Data
-import items from "./items";
-
 // Styling
-import styles from "./styles";
+import {Title, GlobalStyle, RestaurantImage, RestaurantBody} from "./components/styles"
 
+// Theme
+import { ThemeProvider } from "styled-components";
+
+const theme = {
+    mainColor: "#242424", // main font color
+    backgroundColor: "#f2cbd5", // main background color
+    pink: "#ba657a",
+};
 
 function App() {
   return (
-    <div style={styles.restaurantBody}>
-        <h1 style={styles.restaurantName}>My Restaurant</h1>
-        <img src="https://www.todott.com/wp-content/uploads/2016/10/clos-maggiore-2.jpg" className="App-logo" style={styles.restaurantImage} alt="logo" />
+    <ThemeProvider theme={theme}>
 
-        <ItemList />
-    </div>
+        <RestaurantBody>
+            <GlobalStyle/>
+            <Title>My Restaurant</Title>
+            <RestaurantImage src="https://www.todott.com/wp-content/uploads/2016/10/clos-maggiore-2.jpg" alt="logo" />
+
+            <ItemList />
+        </RestaurantBody>
+
+    </ThemeProvider>
   );
 }
 
